@@ -35,7 +35,7 @@ public class HealthArticles extends AppCompatActivity {
         HashMap hashMap;
         SimpleAdapter simpleAdapter;
         ListView lvHA;
-        Button btnBackHA;
+
 
 
 
@@ -44,13 +44,7 @@ public class HealthArticles extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_articles);
         lvHA = findViewById(R.id.lvHA);
-        btnBackHA = findViewById(R.id.btnBackHA);
-        btnBackHA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HealthArticles.this,HomeActivity.class));
-            }
-        });
+
 
         arrayList = new ArrayList();
         for (int i=0;i<health_details.length;i++){

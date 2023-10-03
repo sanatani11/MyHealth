@@ -20,28 +20,28 @@ public class DoctorDetails extends AppCompatActivity {
             {"Doctor's name: Ayush Kumar","Hospital Add.: Akharaghat", "Exp: 2 years", "Mobile: 9999999988","2000"},
             {"Doctor's name: Jayant Newton","Hospital Add.: Chhapra", "Exp: 3 years", "Mobile: 9999999969","100"},
             {"Doctor's name: Raushan Pandey","Hospital Add.: Minapur", "Exp: 5 years", "Mobile: 8888888888","500"},
-            {"Doctor's name: Raksha Mishra","Hospital Add.: Hazaribagh", "Exp: 2 years", "Mobile: 1431431437","10000"}
+            {"Doctor's name: Jaydev Pathak","Hospital Add.: Shivaji Marg", "Exp: 2 years", "Mobile: 1431431437","10000"}
     };
     private String[][] doctor_details2 = {
             {"Doctor's name: Nitin Singh","Hospital Add.: Ahiyapur", "Exp: 2 months", "Mobile: 9999999999","1000"},
             {"Doctor's name: Raushan Kumar","Hospital Add.: Akharaghat", "Exp: 2 years", "Mobile: 9999999988","2000"},
             {"Doctor's name: Kahani Newton","Hospital Add.: Chhapra", "Exp: 3 years", "Mobile: 9999999969","100"},
             {"Doctor's name: Narendra Pandey","Hospital Add.: Minapur", "Exp: 5 years", "Mobile: 8888888888","500"},
-            {"Doctor's name: Rashi Mishra","Hospital Add.: Hazaribagh", "Exp: 2 years", "Mobile: 1431431437","10000"}
+            {"Doctor's name: Raunak Kumar","Hospital Add.: Shivaji Marg", "Exp: 2 years", "Mobile: 1431431437","10000"}
     };
     private String[][] doctor_details3 = {
             {"Doctor's name: Khushi Padmavat","Hospital Add.: Ahiyapur", "Exp: 2 months", "Mobile: 9999999999","1000"},
             {"Doctor's name: Ayush Lodha","Hospital Add.: Akharaghat", "Exp: 2 years", "Mobile: 9999999988","2000"},
             {"Doctor's name: Jayant Beluri","Hospital Add.: Chhapra", "Exp: 3 years", "Mobile: 9999999969","100"},
-            {"Doctor's name: Raushan Mishra","Hospital Add.: Minapur", "Exp: 5 years", "Mobile: 8888888888","500"},
-            {"Doctor's name: Raksha Pandey","Hospital Add.: Hazaribagh", "Exp: 2 years", "Mobile: 1431431437","10000"}
+            {"Doctor's name: Raushan Ranjan","Hospital Add.: Minapur", "Exp: 5 years", "Mobile: 8888888888","500"},
+            {"Doctor's name: Ramesh Singhania","Hospital Add.: Pune", "Exp: 2 years", "Mobile: 1431431437","10000"}
     };
     private String[][] doctor_details4 = {
             {"Doctor's name: Keshav Raj","Hospital Add.: Ahiyapur", "Exp: 2 months", "Mobile: 9996999999","1000"},
             {"Doctor's name: Kumar Shanu","Hospital Add.: Akharaghat", "Exp: 2 years", "Mobile: 2999999988","2000"},
             {"Doctor's name: Sonu Nigam","Hospital Add.: Chhapra", "Exp: 3 years", "Mobile: 7999999969","100"},
             {"Doctor's name: Khesari Yadav","Hospital Add.: Minapur", "Exp: 5 years", "Mobile: 8988888888","500"},
-            {"Doctor's name: Mahi","Hospital Add.: Heart", "Exp: 19 years", "Mobile: 7777777777","10000"}
+            {"Doctor's name: Mahi","Hospital Add.: Heartland", "Exp: 19 years", "Mobile: 7777777777","10000"}
     };
     private String[][] doctor_details5 = {
             {"Doctor's name: Vaibhav Tiwari","Hospital Add.: Jampur", "Exp: 2 months", "Mobile: 9999499999","1000"},
@@ -51,7 +51,6 @@ public class DoctorDetails extends AppCompatActivity {
             {"Doctor's name: John Sindri","Hospital Add.: Hazarigarden", "Exp: 2 years", "Mobile: 1431431437","10000"}
     };
     TextView tvTitle;
-    Button btnBackDoctorDetail;
     String [][] doctor_details = {};
     ArrayList arrayList;
     SimpleAdapter simpleAdapter;
@@ -80,13 +79,7 @@ public class DoctorDetails extends AppCompatActivity {
         if(title.compareTo("Cardiologists")==0){
             doctor_details = doctor_details5;
         }
-        btnBackDoctorDetail = findViewById(R.id.btnBMDGoBack);
-        btnBackDoctorDetail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(DoctorDetails.this,FindDoctor.class));
-            }
-        });
+
         arrayList = new ArrayList();
         for(int i=0; i < doctor_details.length; i++){
             hashMap = new HashMap<>();

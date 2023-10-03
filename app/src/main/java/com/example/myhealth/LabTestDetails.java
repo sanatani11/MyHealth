@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class LabTestDetails extends AppCompatActivity {
     TextView tvPackageName,tvTotalCost;
     EditText etLabDetails;
-    Button btnAddToCart, btnGoBack;
+    Button btnAddToCart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,6 @@ public class LabTestDetails extends AppCompatActivity {
         tvTotalCost = findViewById(R.id.tvTotalCost);
         etLabDetails = findViewById(R.id.etLabDetails);
         btnAddToCart = findViewById(R.id.btnAddToCart);
-        btnGoBack = findViewById(R.id.btnBMDGoBack);
         etLabDetails.setKeyListener(null);
 
         Intent intent = getIntent();
@@ -33,12 +32,6 @@ public class LabTestDetails extends AppCompatActivity {
         etLabDetails.setText(intent.getStringExtra("text2"));
         tvTotalCost.setText("Total cost: "+intent.getStringExtra("text3")+"/-");
 
-        btnGoBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LabTestDetails.this,LabTest.class));
-            }
-        });
         btnAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

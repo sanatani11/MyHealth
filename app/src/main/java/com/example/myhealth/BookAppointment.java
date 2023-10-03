@@ -24,7 +24,7 @@ public class BookAppointment extends AppCompatActivity {
     TextView tvAppointmentTitle;
     private DatePickerDialog datePickerDialog;
     private TimePickerDialog timePickerDialog;
-    Button btnBookAppointment, btnBackBook,btnAppDate,btnAppTime;
+    Button btnBookAppointment, btnAppDate,btnAppTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,6 @@ public class BookAppointment extends AppCompatActivity {
         etAppointmentFees = findViewById(R.id.etLabBookContact);
         etAppointmentName = findViewById(R.id.etLabBookFullName);
         tvAppointmentTitle = findViewById(R.id.tvAppointmentTitle);
-        btnBackBook = findViewById(R.id.btnBackBook);
         btnBookAppointment = findViewById(R.id.btnBookLabBook);
         btnAppDate = findViewById(R.id.btnCartDate);
         btnAppTime = findViewById(R.id.btnCartTime);
@@ -65,12 +64,7 @@ public class BookAppointment extends AppCompatActivity {
                 timePickerDialog.show();
             }
         });
-        btnBackBook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(BookAppointment.this,FindDoctor.class));
-            }
-        });
+
         btnBookAppointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,6 +79,7 @@ public class BookAppointment extends AppCompatActivity {
                     database.addOrder(username,etAppointmentName.getText().toString(),etAppointmentAddress.getText().toString(),etAppointmentContact.getText().toString(),0,btnAppDate.getText().toString(),btnAppTime.getText().toString(),Float.parseFloat(intent.getStringExtra("text5")),"appointment");
                     Toast.makeText(getApplicationContext(), "Appointment is successfully booked", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(BookAppointment.this, HomeActivity.class));
+                    finishAffinity();
                 }
 
             }

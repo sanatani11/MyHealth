@@ -36,7 +36,7 @@ public class CartLab extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart_lab);
-        btnCartBack = findViewById(R.id.btnBMDGoBack);
+        //btnCartBack = findViewById(R.id.btnBMDGoBack);
         btnCartDate = findViewById(R.id.btnCartDate);
         btnCartTime = findViewById(R.id.btnCartTime);
         btnCartCheckOut = findViewById(R.id.btnAddToCart);
@@ -78,12 +78,13 @@ public class CartLab extends AppCompatActivity {
         new String[] {"line1", "line2", "line3", "line4", "line5" },
             new int[] {R.id.line_a, R.id.line_b, R.id.line_c, R.id.line_d, R.id.line_e});
         lvCart.setAdapter(simpleAdapter);
-        btnCartBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(CartLab.this,LabTest.class));
-            }
-        });
+//        btnCartBack.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(CartLab.this,LabTest.class));
+//                finishAffinity();
+//            }
+//        });
         btnCartCheckOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

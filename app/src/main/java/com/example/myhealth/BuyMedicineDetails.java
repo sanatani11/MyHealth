@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class BuyMedicineDetails extends AppCompatActivity {
     TextView tvBMDPackageName,tvBMDTotalCost;
     EditText etBMDMultiLines;
-    Button btnBMDAddToCart, btnBMDGoBack;
+    Button btnBMDAddToCart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,6 @@ public class BuyMedicineDetails extends AppCompatActivity {
         tvBMDTotalCost = findViewById(R.id.tvBMDTotalCost);
         etBMDMultiLines = findViewById(R.id.etBMDMultiLines);
         btnBMDAddToCart = findViewById(R.id.btnBMDAddToCart);
-        btnBMDGoBack = findViewById(R.id.btnBMDGoBack);
         etBMDMultiLines.setKeyListener(null);
 
         Intent intent = getIntent();
@@ -33,12 +32,7 @@ public class BuyMedicineDetails extends AppCompatActivity {
         etBMDMultiLines.setText(intent.getStringExtra("text2"));
         tvBMDTotalCost.setText("Total cost: "+intent.getStringExtra("text3")+"/-");
 
-        btnBMDGoBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(BuyMedicineDetails.this, BuyMedicine.class));
-            }
-        });
+
         btnBMDAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +48,7 @@ public class BuyMedicineDetails extends AppCompatActivity {
                     database.addCart(username,product,price,"medicine");
                     Toast.makeText(BuyMedicineDetails.this, "Report inserted to cart", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(BuyMedicineDetails.this, BuyMedicine.class));
+                    finish();
                 }
 
             }

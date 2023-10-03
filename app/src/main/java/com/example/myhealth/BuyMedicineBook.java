@@ -39,6 +39,7 @@ public class BuyMedicineBook extends AppCompatActivity {
                 database.removeCart(username,"medicine");
                 Toast.makeText(BuyMedicineBook.this, "Booking successful", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(BuyMedicineBook.this,HomeActivity.class));
+                finishAffinity();
             }
         });
     }

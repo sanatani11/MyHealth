@@ -39,6 +39,7 @@ public class LabTestBook extends AppCompatActivity {
                 database.removeCart(username,"lab");
                 Toast.makeText(LabTestBook.this, "Booking successful", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(LabTestBook.this,HomeActivity.class));
+                finishAffinity();
             }
         });
     }

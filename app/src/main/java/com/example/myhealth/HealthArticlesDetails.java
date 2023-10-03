@@ -12,7 +12,6 @@ import android.widget.TextView;
 public class HealthArticlesDetails extends AppCompatActivity {
     TextView tvHADTitle;
     ImageView ivHAD;
-    Button btnBackHAD;
 
 
     @Override
@@ -22,7 +21,6 @@ public class HealthArticlesDetails extends AppCompatActivity {
 
         tvHADTitle = findViewById(R.id.tvHADTitle);
         ivHAD = findViewById(R.id.ivHAD);
-        btnBackHAD = findViewById(R.id.btnBackHAD);
 
         Intent intent = getIntent();
         tvHADTitle.setText(intent.getStringExtra("text1"));
@@ -32,11 +30,6 @@ public class HealthArticlesDetails extends AppCompatActivity {
             int resId = bundle.getInt("text2");
             ivHAD.setImageResource(resId);
         }
-        btnBackHAD.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HealthArticlesDetails.this,HealthArticles.class));
-            }
-        });
+
     }
 }

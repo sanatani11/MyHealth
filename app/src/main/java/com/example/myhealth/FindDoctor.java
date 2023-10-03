@@ -19,6 +19,7 @@ public class FindDoctor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(FindDoctor.this,HomeActivity.class));
+                finishAffinity();
             }
         });
         CardView cardFamilyPhysician = findViewById(R.id.cardFamilyPhysician);
@@ -28,6 +29,7 @@ public class FindDoctor extends AppCompatActivity {
                 Intent intent = new Intent(FindDoctor.this, DoctorDetails.class);
                 intent.putExtra("title", "Family"+ " Physicians");
                 startActivity(intent);
+
             }
         });
         CardView cardDietician = findViewById(R.id.cardDietician);
@@ -37,6 +39,7 @@ public class FindDoctor extends AppCompatActivity {
                 Intent intent = new Intent(FindDoctor.this,DoctorDetails.class);
                 intent.putExtra("title","Dietician");
                 startActivity(intent);
+
             }
         });
         CardView cardDentist = findViewById(R.id.cardDentist);
@@ -46,6 +49,7 @@ public class FindDoctor extends AppCompatActivity {
                 Intent intent = new Intent(FindDoctor.this, DoctorDetails.class);
                 intent.putExtra("title", "Dentist");
                 startActivity(intent);
+
             }
         });
         CardView cardSurgeon = findViewById(R.id.cardSurgeon);
@@ -55,6 +59,7 @@ public class FindDoctor extends AppCompatActivity {
                 Intent intent = new Intent(FindDoctor.this, DoctorDetails.class);
                 intent.putExtra("title", "Surgeon");
                 startActivity(intent);
+
             }
         });
         CardView cardCardiologists = findViewById(R.id.cardCardiologists);
@@ -64,6 +69,7 @@ public class FindDoctor extends AppCompatActivity {
                 Intent intent = new Intent(FindDoctor.this, DoctorDetails.class);
                 intent.putExtra("title", "Cardiologists");
                 startActivity(intent);
+
             }
         });
     }

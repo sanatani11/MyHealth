@@ -59,7 +59,7 @@ public class BuyMedicine extends AppCompatActivity {
     ArrayList arrayList;
     SimpleAdapter simpleAdapter;
     ListView lvBM;
-    Button btnBMGoToCart, btnBMBack;
+    Button btnBMGoToCart;
 
 
     @Override
@@ -67,7 +67,6 @@ public class BuyMedicine extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy_medicine);
         btnBMGoToCart = findViewById(R.id.btnAddToCart);
-        btnBMBack = findViewById(R.id.btnBMDGoBack);
         lvBM = findViewById(R.id.lvBM);
 
         btnBMGoToCart.setOnClickListener(new View.OnClickListener() {
@@ -76,12 +75,7 @@ public class BuyMedicine extends AppCompatActivity {
                 startActivity(new Intent(BuyMedicine.this,CartBuyMedicine.class));
             }
         });
-        btnBMBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(BuyMedicine.this,HomeActivity.class));
-            }
-        });
+
         arrayList = new ArrayList();
         for (int i=0;i<packages.length;i++){
             hashMap = new HashMap<>();

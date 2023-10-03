@@ -35,17 +35,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tvTitleDoctorDetail"
         app:layout_constraintVertical_bias="0.05" />
 
-    <Button
-        android:id="@+id/btnBackHAD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BACK"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivHAD"
-        app:layout_constraintVertical_bias="0.69" />
-
     <ImageView
         android:id="@+id/ivHAD"
         android:layout_width="365dp"

@@ -21,21 +21,15 @@ public class OrderDetails extends AppCompatActivity {
     ArrayList arrayList;
     SimpleAdapter simpleAdapter;
     ListView lvOrderDetails;
-    Button btnOrderDetailsBack;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_details);
-        btnOrderDetailsBack = findViewById(R.id.btnBMDGoBack);
         lvOrderDetails = findViewById(R.id.etLabDetails);
-        btnOrderDetailsBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(OrderDetails.this, HomeActivity.class));
-            }
-        });
+
         SharedPreferences sharedPreferences = getSharedPreferences("share prefs", Context.MODE_PRIVATE);
         String username = sharedPreferences.getString("username","").toString();
         Database database = new Database(getApplicationContext(), "MyHealth", null, 1);

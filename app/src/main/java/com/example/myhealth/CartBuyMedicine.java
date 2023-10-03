@@ -28,7 +28,7 @@ public class CartBuyMedicine extends AppCompatActivity {
     ListView lvBMCart;
     private DatePickerDialog datePickerDialog;
     private TimePickerDialog timePickerDialog;
-    Button btnBMCartDate,btnBMCheckout, btnBMCartGoBack;
+    Button btnBMCartDate,btnBMCheckout;
     TextView tvBMCartTotalCost;
     private String[][] packages= {};
 
@@ -37,7 +37,7 @@ public class CartBuyMedicine extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart_buy_medicine);
 
-        btnBMCartGoBack = findViewById(R.id.btnBMCartGoBack);
+
         btnBMCartDate = findViewById(R.id.btnBMCartDate);
 //        btnCartTime = findViewById(R.id.btnCartTime);
         btnBMCheckout = findViewById(R.id.btnBMCheckout);
@@ -78,12 +78,7 @@ public class CartBuyMedicine extends AppCompatActivity {
                 new String[] {"line1", "line2", "line3", "line4", "line5" },
                 new int[] {R.id.line_a, R.id.line_b, R.id.line_c, R.id.line_d, R.id.line_e});
         lvBMCart.setAdapter(simpleAdapter);
-        btnBMCartGoBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(CartBuyMedicine.this,BuyMedicine.class));
-            }
-        });
+//
         btnBMCheckout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,6 +86,7 @@ public class CartBuyMedicine extends AppCompatActivity {
                 intent.putExtra("price",tvBMCartTotalCost.getText());
                 intent.putExtra("date",btnBMCartDate.getText());
                 startActivity(intent);
+                finish();
 
             }
         });

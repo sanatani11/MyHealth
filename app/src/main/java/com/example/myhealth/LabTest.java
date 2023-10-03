@@ -43,21 +43,15 @@ public class LabTest extends AppCompatActivity {
     ArrayList arrayList;
     HashMap hashMap;
     SimpleAdapter simpleAdapter;
-    Button btnLtGoToCart, btnLtBack;
+    Button btnLtGoToCart;
     ListView lvLabTest;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lab_test);
         btnLtGoToCart = findViewById(R.id.btnAddToCart);
-        btnLtBack = findViewById(R.id.btnBMDGoBack);
         lvLabTest = findViewById(R.id.etLabDetails);
-        btnLtBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LabTest.this,HomeActivity.class));
-            }
-        });
+
         arrayList = new ArrayList();
         for (int i=0;i<packages.length;i++){
             hashMap = new HashMap<>();
